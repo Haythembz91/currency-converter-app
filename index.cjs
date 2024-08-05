@@ -12,7 +12,7 @@ app.listen(PORT,()=>console.log(`Server is running on port ${PORT}`))
 
 
 app.get('/news',(req,res)=>{
-    console.log(req)
+    
     const options = {
         method: 'GET',
         url: 'https://seeking-alpha.p.rapidapi.com/news/v2/list',
