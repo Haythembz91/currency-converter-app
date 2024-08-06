@@ -7,17 +7,10 @@ require('dotenv').config()
 const app = express()
 
 const app = express();
-app.use(cors({
-        origin: "http://localhost:8000/news"
-    }
-))
 
 app.use(cors({
-        origin: "http://localhost:8000/currency"
-    }
-))
-
-app.options('*', cors())
+        origin:'*';
+}))
 
 app.listen(PORT,()=>console.log(`Server is running on port ${PORT}`))
 
