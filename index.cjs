@@ -6,7 +6,12 @@ require('dotenv').config()
 
 const app = express()
 
-app.use(cors())
+const app = express();
+app.use(cors({
+        origin: "http//localhost:8000/news"
+    }
+))
+app.options('*', cors())
 
 app.listen(PORT,()=>console.log(`Server is running on port ${PORT}`))
 
