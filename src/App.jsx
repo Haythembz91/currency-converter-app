@@ -5,7 +5,7 @@ import CurrencyConverter from "./components/CurrencyConverter.jsx"
 const App = ()=>{
     return (
         <>
-            <h1 style={{textAlign:'center'}}>Ania Currency Dashboard</h1>
+            <h1 style={{textAlign:'center'}}>Currency Dashboard</h1>
             <div className={'app'}>
                 <CurrencyConverter/>
                 <NewsFeed/>
