@@ -6,18 +6,7 @@ require('dotenv').config()
 
 const app = express()
 
-app.use(cors({
-    origin: "https://seeking-alpha.p.rapidapi.com/news/v2/list",
-    headers: ["Content-Type"],
-    credentials: true,
-}));
-app.use(cors({
-    origin: "https://v6.exchangerate-api.com/v6/72611d4b48b6aa8cfc77eb8d/latest/USD",
-    headers: ["Content-Type"],
-    credentials: true,
-}));
-
-app.options('*', cors())
+app.use(cors())
 
 app.listen(PORT,()=>console.log(`Server is running on port ${PORT}`))
 
