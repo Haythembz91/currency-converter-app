@@ -11,6 +11,12 @@ app.use(cors({
         origin: "http://localhost:8000/news"
     }
 ))
+
+app.use(cors({
+        origin: "http://localhost:8000/currency"
+    }
+))
+
 app.options('*', cors())
 
 app.listen(PORT,()=>console.log(`Server is running on port ${PORT}`))
