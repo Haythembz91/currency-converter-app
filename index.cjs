@@ -8,7 +8,7 @@ const app = express()
 
 const app = express();
 app.use(cors({
-        origin: "http//localhost:8000/news"
+        origin: "http://localhost:8000/news"
     }
 ))
 app.options('*', cors())
