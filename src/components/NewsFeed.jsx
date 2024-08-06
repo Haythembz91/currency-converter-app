@@ -8,13 +8,17 @@ const NewsFeed = ()=>{
     const [articles,setArticles]=useState([])
     useEffect(()=>{
         const url = 'http://localhost:8000/news';
-
-        fetch(url).then(response=>{
+        try{
+            fetch(url).then(response=>{
             return response.json()
         }).then(data=>{
             setArticles(data)
             console.log('fetched news')
         })
+        }catch(e){
+            console.error(e)
+        }
+            
     },[])
 
 
