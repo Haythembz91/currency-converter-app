@@ -8,7 +8,10 @@ const app = express()
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin:'https://currency-converter-app-gilt.vercel.app/',
+}
+            ));
 
 app.listen(PORT,()=>console.log(`Server is running on port ${PORT}`))
 
@@ -30,8 +33,6 @@ app.get('/news',(req,res)=>{
     }
     axios.request(options).then(response=>{
         res.json(response.data.data)
-              res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', '*')
     }).catch(err=>{
         console.error(err)
     })
@@ -42,9 +43,6 @@ app.get('/currency',(req,res)=>{
         return response.json()
     }).then(data=> {
         res.json(data)
-              res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', '*')
-
     }).catch(err=>{
         console.error(err.message)
     })
