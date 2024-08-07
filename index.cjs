@@ -5,7 +5,7 @@ const axios = require('axios')
 require('dotenv').config()
 
 const app = express();
-
+//test
 app.use(cors());
 
 app.listen(PORT,()=>console.log(`Server is running on port ${PORT}`))
