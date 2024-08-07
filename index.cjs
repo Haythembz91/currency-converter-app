@@ -26,7 +26,7 @@ app.get('/news',(req,res)=>{
             'X-RapidAPI-Host': 'seeking-alpha.p.rapidapi.com'
         }
     }
-    axios.request(options).then(response=>{
+    fetch(options).then(response=>{
         res.json(response.data.data)
     }).catch(err=>{
         console.error(err)
