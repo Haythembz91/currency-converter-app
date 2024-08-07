@@ -17,7 +17,7 @@
           ]
         },
         {
-          "source": "/(.*)",
+          "source": "/https://currency-converter-app-gilt.vercel.app/(.*)",
           "headers": [
             { "key": "Access-Control-Allow-Origin", "value": "*" }
           ]
