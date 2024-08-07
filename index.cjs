@@ -8,10 +8,7 @@ const app = express()
 
 const app = express();
 
-app.use(cors({
-    origin:'https://currency-converter-app-gilt.vercel.app/',
-}
-            ));
+app.use(cors());
 
 app.listen(PORT,()=>console.log(`Server is running on port ${PORT}`))
 
