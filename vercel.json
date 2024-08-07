@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "./index.js",
+      "src": "./index.cjs",
       "use": "@vercel/node"
     }
   ],
 
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/(.news)",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
