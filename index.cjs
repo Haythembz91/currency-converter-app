@@ -4,8 +4,6 @@ const cors = require('cors')
 const axios = require('axios')
 require('dotenv').config()
 
-const app = express()
-
 const app = express();
 
 app.use(cors());
