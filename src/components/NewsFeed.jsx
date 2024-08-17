@@ -7,7 +7,7 @@ const NewsFeed = ()=>{
 
     const [articles,setArticles]=useState([])
     useEffect(()=>{
-        const url = `${process.env.VITE_BACKEND_SERVER}/news`;
+        const url = `https://currency-converter-app-p4d5.onrender.com/news`;
         try{
             fetch(url).then(response=>{
             return response.json()
