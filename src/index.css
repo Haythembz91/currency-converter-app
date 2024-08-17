@@ -1,0 +1,55 @@
+body{
+  display: flex;
+  justify-content: center;
+}
+.news-feed{
+  padding: 10px ;
+  margin: 10px;
+  background-color: rgb(204,204,231);
+  box-shadow: 0 3px 10px rgb(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.currency-converter{
+  padding: 10px;
+  margin: 10px ;
+  background-color: rgb(230,223,211);
+  box-shadow: 0 3px 10px rgb(0,0,0,0.2);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.exchange-rate{
+  padding: 10px;
+  margin: 10px ;
+  background-color: rgb(221,230,221);
+  box-shadow: 0 3px 10px rgb(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.app{
+  display: flex;
+
+}
+.input-box * {
+  margin: 5px;
+}
+
+@media screen and (max-width:720px) {
+  .app{
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+@media screen and (max-width:400px) {
+  .currency-converter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #convert-button{
+  width: 100px;
+    margin: auto ;
+}
+}
