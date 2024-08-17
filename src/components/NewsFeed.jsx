@@ -7,7 +7,7 @@ const NewsFeed = ()=>{
 
     const [articles,setArticles]=useState([])
     useEffect(()=>{
-        const url = 'http://localhost:8000/news';
+        const url = `${vite.process.VITE_BACKEND_SERVER}/news`;
         try{
             fetch(url).then(response=>{
             return response.json()
