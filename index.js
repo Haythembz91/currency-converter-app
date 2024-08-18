@@ -5,10 +5,7 @@ const axios = require('axios')
 require('dotenv').config()
 
 const app = express();
-
 app.use(cors());
-
-app.listen(PORT,()=>console.log(`Server is running on port ${PORT}`))
 
 app.get('/news',async (req,res)=>{
     const options = {
@@ -41,3 +38,6 @@ app.get('/currency',(req,res)=>{
         console.error(err.message)
     })
 })
+
+
+app.listen(PORT,()=>console.log(`Server is running on port ${PORT}`))
