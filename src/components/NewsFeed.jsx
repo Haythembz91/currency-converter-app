@@ -6,26 +6,28 @@ import {useEffect, useState} from "react";
 const NewsFeed = ()=>{
 
     const [articles,setArticles]=useState([])
-    useEffect(()=>{
-        const url = 'https://currency-converter-app-p4d5.onrender.com/news';
+    
+    const getNews = async()=>{
         try{
-            fetch(url).then(response=>{
-            return response.json()
-        }).then(data=>{
-            setArticles(data)
-            console.log('fetched news')
-        })
-        }catch(e){
-            console.error(e)
-        }
-            
+            const response = await fetch('http://localhost:8000/news')
+            if(response.status===200){
+                const data = await response.json()
+                setArticles(data)
+            }
+            }catch(e){
+                console.error(e)
+            }
+    }
+
+    useEffect(()=>{
+        getNews()
     },[])
 
-
+    console.log(articles)
     return (
         <div className={'news-feed'}>
             <h3>News Feed:</h3>
-            {articles.map((article,index)=><a key={index} href={article.links['canonical']} target={"_blank"}><p key={index}>{article.attributes.publishOn.slice(0,10)} : {article.attributes.title}</p></a>)}
+            {articles.map((article,index)=><a key={index} href={article.article_url} target={"_blank"}><p key={index}>{article.post_time_utc.slice(0,10)} : {article.article_title}</p></a>)}
         </div>
     )
 }

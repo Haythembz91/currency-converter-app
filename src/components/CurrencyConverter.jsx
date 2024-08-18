@@ -16,7 +16,7 @@ const CurrencyConverter = ()=>{
     const currencyExchangeRef = useRef('')
 
 useEffect(()=>{
-    fetch('https://currency-converter-app-p4d5.onrender.com/currency').then(response=>{
+    fetch('http://localhost:8000/currency').then(response=>{
         return response.json()
     }).then(data=> {
         setCurrencyList(Object.keys(data['conversion_rates']))
