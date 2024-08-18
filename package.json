@@ -2,7 +2,7 @@
   "name": "currency-converter-app",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type":"module",
   "scripts": {
     "start:backend": "nodemon index.cjs",
     "dev": "vite",

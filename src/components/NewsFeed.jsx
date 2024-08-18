@@ -23,7 +23,7 @@ const NewsFeed = ()=>{
         getNews()
     },[])
 
-    console.log(articles)
+    
     return (
         <div className={'news-feed'}>
             <h3>News Feed:</h3>

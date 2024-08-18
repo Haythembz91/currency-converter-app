@@ -22,7 +22,6 @@ useEffect(()=>{
         setCurrencyList(Object.keys(data['conversion_rates']))
         setExchangeList(Object.values(data['conversion_rates']))
         setUpdateTime(data['time_last_update_utc'].slice(0,16))
-        console.log('fetched')
 
     }).catch(err=>{
         console.error(err.message)
@@ -30,7 +29,7 @@ useEffect(()=>{
 },[])
 
 
-    console.log('rendered')
+    
 
     const convert = ()=>{
         exchangeRef.current=(exchangeList[currencyList.indexOf(secondaryCurrency)]/exchangeList[currencyList.indexOf(primaryCurrency)]).toFixed(6)

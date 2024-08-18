@@ -32,7 +32,6 @@ app.get('/news',async (req,res)=>{
       }
 })
 
-
 app.get('/currency',(req,res)=>{
     fetch('https://v6.exchangerate-api.com/v6/72611d4b48b6aa8cfc77eb8d/latest/USD').then(response=>{
         return response.json()
