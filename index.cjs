@@ -1,8 +1,9 @@
-const PORT = 8000
+require('dotenv').config()
+
+const PORT = process.env.VITE_SERVER_PORT
 const express = require('express')
 const cors = require('cors')
 const axios = require('axios')
-require('dotenv').config()
 const app = express();
 app.use(cors());
 
@@ -15,7 +16,7 @@ app.get('/news',async (req,res)=>{
           language: 'en'
         },
         headers: {
-          'x-rapidapi-key': '51d5f0bb02msh91469cad28e9548p165676jsn02584139e60d',
+          'x-rapidapi-key': process.env.VITE_RAPID_API_KEY,
           'x-rapidapi-host': 'real-time-finance-data.p.rapidapi.com'
         }
       };

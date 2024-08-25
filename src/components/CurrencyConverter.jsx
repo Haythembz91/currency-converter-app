@@ -16,7 +16,7 @@ const CurrencyConverter = ()=>{
     const currencyExchangeRef = useRef('')
 
 useEffect(()=>{
-    fetch('http://localhost:8000/currency').then(response=>{
+    fetch(`${import.meta.env.VITE_LOCAL_HOST}/currency`).then(response=>{
         return response.json()
     }).then(data=> {
         setCurrencyList(Object.keys(data['conversion_rates']))

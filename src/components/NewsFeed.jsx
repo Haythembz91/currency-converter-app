@@ -9,7 +9,7 @@ const NewsFeed = ()=>{
     
     const getNews = async()=>{
         try{
-            const response = await fetch('http://localhost:8000/news')
+            const response = await fetch(`${import.meta.env.VITE_LOCAL_HOST}/news`)
             if(response.status===200){
                 const data = await response.json()
                 setArticles(data)
