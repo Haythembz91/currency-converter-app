@@ -2,7 +2,12 @@ body{
   display: flex;
   justify-content: center;
 }
+.app{
+  display: flex;
+  justify-content: center;
+}
 .news-feed{
+  width: 60%;
   padding: 10px ;
   margin: 10px;
   background-color: rgb(204,204,231);
@@ -40,6 +45,9 @@ body{
     display: flex;
     flex-direction: column;
   }
+  .news-feed{
+    width: auto;
+  }
 
 }
 @media screen and (max-width:400px) {
@@ -53,3 +61,24 @@ body{
     margin: auto ;
 }
 }
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #FFF;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

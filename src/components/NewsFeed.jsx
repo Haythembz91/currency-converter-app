@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 const NewsFeed = ()=>{
 
     const [articles,setArticles]=useState([])
+    const [showLoader,setShowLoader]=useState(true)
     
     const getNews = async()=>{
         try{
@@ -13,6 +14,7 @@ const NewsFeed = ()=>{
             if(response.status===200){
                 const data = await response.json()
                 setArticles(data)
+                setShowLoader(false)
             }
             }catch(e){
                 console.error(e)
@@ -27,6 +29,10 @@ const NewsFeed = ()=>{
     return (
         <div className={'news-feed'}>
             <h3>News Feed:</h3>
+            {showLoader&&<div>
+                <div className="loader"></div>
+                <div>Loading...</div>
+                </div>}
             {articles.map((article,index)=><a key={index} href={article.article_url} target={"_blank"}><p key={index}>{article.post_time_utc.slice(0,10)} : {article.article_title}</p></a>)}
         </div>
     )
